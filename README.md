@@ -32,7 +32,7 @@ I will be using various languages (Python, Typescript) to write the functions an
 
 4. Add the required packages
 
-5. Zip file and upload to AWS 
+5. Zip folder and upload to AWS Lambda
 
 
 
