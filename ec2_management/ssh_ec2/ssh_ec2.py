@@ -5,7 +5,7 @@ from io import StringIO
 
  
 # Get Parameter from SSM
-# @param - string | list comma seperated
+# @param param - string | list comma seperated
 def get_parameters(param):
     
     # Boot up SSM client
@@ -32,8 +32,8 @@ ssh.set_missing_host_key_policy(paramiko.AutoAddPolicy())
 
 
 # Connect to ec2 instance
-# @ip - string
-# @username - string
+# @param ip - string
+# @param username - string
 def connect_ssh(ip, username):
     connected = False
 
@@ -47,7 +47,7 @@ def connect_ssh(ip, username):
  
 
 # Run shell commands on ec2 instance
-# @cmd - string
+# @param cmd - string
 def run_command(cmd):
     stdin, stdout, stderr = ssh.exec_command(cmd)
     stdin.flush()
