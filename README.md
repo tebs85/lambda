@@ -1,7 +1,7 @@
 # AWS Lamda function to manage EC2
 
-This project is documenting Lamda Script, i'm using to manage the AWS EC2 instances. The scripts are solving various issues for teams in managing workloads on AWS. 
-I will be using various languages (Python, Typescript) to write the functions and most of the functions are being used in production workloads. 
+This project is documenting Lamda functions, I'm using to manage the AWS EC2 instances. The scripts are solving various issues for teams in managing workloads on AWS. 
+I will be using various languages (Python, Typescript) to write the functions and most of the functions are being used in production workloads. Feel free to use them in your projects.
 
 
 ## Prerequisites
@@ -40,7 +40,7 @@ I will be using various languages (Python, Typescript) to write the functions an
 
 You can deploy your Lambda function code as a container image. AWS provides the following resources to help you build a container image for your Python function:
 
-[AWS Documentation available ghere](https://docs.aws.amazon.com/lambda/latest/dg/python-image.html)
+[AWS Documentation available here](https://docs.aws.amazon.com/lambda/latest/dg/python-image.html)
 
 
 
