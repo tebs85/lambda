@@ -26,7 +26,7 @@ I will be using various languages (Python, Typescript) to write the functions an
 
 1. Go to the `module` and inside you will find lambda folder for various functions
 
-2. Select the `function` you need to utilise like `ssh_ec2`
+2. Select the `function` you need to utilise example `ssh_ec2`
 
 3. Inside the is a main lamda file and requirements.txt for additional packages
 
