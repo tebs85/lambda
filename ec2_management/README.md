@@ -5,5 +5,5 @@ This module are Lambda functions that aim to automate SysAdmin function, to mana
 
 # Table of contents
 
-1. SSH EC2 - Using SSM to storee the RSA Key, the Lambda function retrives the key and then ssh into EC2 and run shell commands.
+1. SSH EC2 - Using SSM to store the RSA Key, the Lambda function retrieves the key and then ssh into EC2 and runs shell commands.
 2. Schedule Start/Stop EC2 - Coming soon
