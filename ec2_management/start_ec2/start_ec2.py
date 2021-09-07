@@ -15,7 +15,7 @@ all_instances = [instance.id for instance in ec2.instances.all()]
 
 def lambda_handler(event, context):
     if instances == 0:
-        ec2.stop_instances(InstanceIds=instances)
+        ec2.start_instances(InstanceIds=instances)
     else:
-        ec2.stop_instances(InstanceIds=all_instances)
+        ec2.start_instances(InstanceIds=all_instances)
     print('started your instances: ' + str(instances))
