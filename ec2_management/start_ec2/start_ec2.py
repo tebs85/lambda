@@ -25,8 +25,8 @@ def get_all_instanes_id():
 
 def lambda_handler(event, context):
     if instances == 0:
-        ec2.stop_instances(InstanceIds=instances)
+        ec2.start_instances(InstanceIds=instances)
         print('started your instances: ' + str(instances))
     else:
-        ec2.stop_instances(InstanceIds=get_all_instanes_id())
+        ec2.start_instances(InstanceIds=get_all_instanes_id())
         print('started your instances: ' + str(get_all_instanes_id()))
