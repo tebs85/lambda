@@ -11,11 +11,22 @@ region = 'eu-west-1'
 ec2 = boto3.client('ec2', region_name=region)
 
 # Get all instances id
-all_instances = [instance.id for instance in ec2.instances.all()]
+def get_all_instanes_id():
+    
+    all_instances = []
+    
+    describe_instances = ec2.describe_instances()
+    
+    for instances in describe_instances['Reservations']:
+        for instance in instances['Instances']:
+            all_instances.append(instance['InstanceId'])
+        
+    return all_instances
 
 def lambda_handler(event, context):
     if instances == 0:
         ec2.stop_instances(InstanceIds=instances)
+        print('started your instances: ' + str(instances))
     else:
-        ec2.stop_instances(InstanceIds=all_instances)
-    print('started your instances: ' + str(instances))
+        ec2.stop_instances(InstanceIds=get_all_instanes_id())
+        print('started your instances: ' + str(get_all_instanes_id()))
