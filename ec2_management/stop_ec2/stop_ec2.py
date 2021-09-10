@@ -33,22 +33,24 @@ def get_all_instanes_by_tag():
     for instances in describe_instances['Reservations']:
         for instance in instances['Instances']:
             for tag in instance['Tags']:
-                # print(tag['Key'] == "autoManageInstanceSatus")
                 if tag['Key'] == "autoManageInstanceSatus":
-                    if tag['Value'] == 'start':
+                    if tag['Value'] == 'started':
                         all_instances.append(instance['InstanceId'])
         
     return all_instances
     
 def lambda_handler(event, context):
-    
+
     if instances == 0:
-        ec2.start_instances(InstanceIds=get_all_instanes_by_tag())
-        print('started your instances: ' + str(get_all_instanes_by_tag()))
+        all_instanes_by_tag = get_all_instanes_by_tag()
+        ec2.stop_instances(InstanceIds=all_instanes_by_tag)
+        ec2.create_tags(Resources=all_instanes_by_tag, Tags=[{'Key': 'autoManageInstanceSatus', 'Value': 'stopped'}])
+        print('started your instances: ' + str(all_instanes_by_tag))
     elif get_all_instanes_by_tag() == 0: 
-        ec2.start_instances(InstanceIds=get_all_instanes_id())
-        print('started your instances: ' + str(get_all_instanes_id()))
+        all_instanes_id = get_all_instanes_id()
+        ec2.stop_instances(InstanceIds=all_instanes_id)
+        print('started your instances: ' + str(all_instanes_id))
     else:
-        ec2.start_instances(InstanceIds=instances)
+        ec2.stop_instances(InstanceIds=instances)
         print('started your instances: ' + str(instances))
 
