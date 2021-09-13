@@ -16,10 +16,11 @@ I will be using various languages (Python, Typescript) to write the functions an
 
 1. Source folder: cdk app written in TypeScript
 
-2. Root folder:
-    * `ec2_management` Automate SysAdmin functions
-    * `rds_management` Automate DBA functions
-    * `security`       Automate security testing and alerting
+2. Root lists mudules of services in folder:
+    * `ec2`             Automate SysAdmin functions
+    * `eks`             Automate EKS SysAdmin functions
+    * `rds`             Automate DBA functions
+    * `security`        Automate security testing and alerting
     
 
 ## Getting started (AWS)
